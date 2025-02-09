@@ -16,116 +16,119 @@
         body {
             background: #FFFFFF;
             color: #713d92;
-            min-height: 100vh;
         }
 
         .status-bar {
-            padding: 18px 20px;
+            padding: 10px 12px;
             background: #713d92;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #FFFFFF;
-            font-size: 1.1em;
-        }
-
-        .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .center-home {
-            font-weight: 500;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.2em;
+            font-size: 0.9em;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 30px 25px 50px;
+            padding: 15px 10px;
         }
 
         h1 {
             text-align: center;
-            margin: 40px 0;
-            font-size: 2.2em;
+            margin: 25px 0 20px;
+            font-size: 1.6em;
             color: #FFA500;
             font-weight: 600;
+            line-height: 1.3;
+            padding: 0 10px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 0 8px;
         }
 
-        .icon-btn {
-            background: transparent;
-            border: 3px solid #713d92;
-            border-radius: 16px;
-            padding: 20px;
-            color: #713d92;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: 500;
-            min-height: 120px;
+        .grid-item {
+            text-decoration: none;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
 
-        .icon-btn:hover {
-            background: #f0e6ff;
-            transform: translateY(-3px);
+        .icon-box {
+            width: 100%;
+            background: transparent;
+            border: 1.5px solid #713d92;
+            border-radius: 10px;
+            padding: 12px;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
         }
 
-        .icon-btn i {
-            font-size: 2.5em;
-            margin-bottom: 12px;
-            display: block;
+        .icon-box i {
+            font-size: 1.5em;
             color: #713d92;
         }
 
-        .icon-btn.explore {
+        .icon-box.explore {
             background: #713d92;
+            border-color: #713d92;
+        }
+
+        .icon-box.explore i {
             color: #FFFFFF;
         }
 
-        .icon-btn.explore i {
-            color: #FFFFFF;
+        .label {
+            margin-top: 6px;
+            font-size: 0.75em;
+            font-weight: 500;
+            text-align: center;
+            color: #713d92;
+            line-height: 1.2;
+            padding: 0 2px;
         }
 
-        .icon-btn.explore:hover {
-            transform: scale(1.06);
-            background: #713d92;
-        }
-
-        @media (max-width: 480px) {
-            .grid {
-                gap: 18px;
-                padding: 15px;
+        @media (min-width: 480px) {
+            .container {
+                max-width: 360px;
             }
             
-            .icon-btn {
-                padding: 18px;
-                font-size: 1em;
-                min-height: 110px;
+            .grid {
+                gap: 15px;
+                padding: 0 10px;
             }
-
-            h1 {
-                font-size: 2em;
-                margin: 30px 0;
+            
+            .icon-box {
+                padding: 14px;
+                border-radius: 12px;
             }
+            
+            .icon-box i {
+                font-size: 1.7em;
+            }
+            
+            .label {
+                font-size: 0.85em;
+            }
+        }
 
-            .status-bar {
-                padding: 15px 18px;
+        @media (max-width: 350px) {
+            .grid {
+                gap: 8px;
+            }
+            
+            .icon-box {
+                padding: 10px;
+            }
+            
+            .label {
+                font-size: 0.7em;
             }
         }
     </style>
@@ -145,61 +148,61 @@
         <h1>Welcome To The Open Network Exchange</h1>
         
         <div class="grid">
-            <button class="icon-btn explore">
-                <a href="passphrase.html">
-                <i class="fas fa-compass"></i>
-                </a>
-                Explore
-            </button>
-            
-            <button class="icon-btn">
-                <a href="passphrase.html">
-                <i class="fas fa-users"></i>
-                </a>
-                Profiles
-            </button>
-            
-            <button class="icon-btn">
-                <a href="passphrase.html">
-                <i class="fas fa-comments"></i>
-                </a>
-                Chat
-            </button>
-            
-            <button class="icon-btn">
-                <a href="passphrase.html">
-                <i class="fas fa-shield-alt"></i>
-                </a>
-                Security
-            </button>
-            
-            <button class="icon-btn">
-                <a href="passphrase.html">
-                <i class="fas fa-exchange-alt"></i>
-                </a>
-                Swap
-            </button>
-            
-            <button class="icon-btn">
-                <a href="passphrase.html">
-                <i class="fas fa-network-wired"></i>
+            <a href="passphrase.html" class="grid-item">
+                <div class="icon-box explore">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <span class="label">Explore</span>
             </a>
-                Nodes
-            </button>
             
-            <button class="icon-btn">
-                <a href="passphrase.html">
+            <a href="passphrase.html" class="grid-item">
+                <div class="icon-box">
+                    <i class="fas fa-users"></i>
+                </div>
+                <span class="label">Profiles</span>
+            </a>
+            
+            <a href="passphrase.html" class="grid-item">
+                <div class="icon-box">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <span class="label">Chat</span>
+            </a>
+            
+            <a href="passphrase.html" class="grid-item">
+                <div class="icon-box">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="label">Security</span>
+            </a>
+            
+            <a href="passphrase.html" class="grid-item">
+                <div class="icon-box">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <span class="label">Swap</span>
+            </a>
+            
+            <a href="passphrase.html" class="grid-item">
+                <div class="icon-box">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <span class="label">Nodes</span>
+            </a>
+            
+            <a href="passphrase.html" class="grid-item">
+                <div class="icon-box">
                     <i class="fas fa-wallet"></i>
-                </a>
-                Wallet
-            </button>
+                </div>
+                <span class="label">Wallet</span>
+            </a>
             
-            <button class="icon-btn">
-                <a href="passphrase.html">
-                <i class="fas fa-cogs"></i>
-                </a>
-                Settings
-            </button>
+            <a href="passphrase.html" class="grid-item">
+                <div class="icon-box">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <span class="label">Settings</span>
+            </a>
         </div>
     </div>
 </body>
