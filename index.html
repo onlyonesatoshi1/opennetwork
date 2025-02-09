@@ -30,6 +30,30 @@
             margin-bottom: 15px;
         }
 
+        .logo-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            color: #713d92;
+            background: #f0e6ff;
+            padding: 15px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #713d92;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
         .container {
             max-width: 480px;
             margin: 0 auto;
@@ -38,7 +62,7 @@
 
         h1 {
             text-align: center;
-            margin: 40px 0 35px;
+            margin: 25px 0 35px;
             font-size: 1.8em;
             color: #FFA500;
             font-weight: 600;
@@ -131,8 +155,14 @@
             }
             
             h1 {
-                margin: 35px 0 30px;
+                margin: 20px 0 30px;
                 font-size: 1.6em;
+            }
+            
+            .logo {
+                width: 65px;
+                height: 65px;
+                font-size: 2em;
             }
         }
     </style>
@@ -145,6 +175,12 @@
         <div class="center-home">Home</div>
         <div class="nav-item">
             <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <div class="logo-container">
+        <div class="logo">
+            <i class="fas fa-globe"></i>
         </div>
     </div>
     
